@@ -1,22 +1,18 @@
-import { Component, OnInit } from '@angular/core';
+import { Component} from '@angular/core';
 import { Router } from '@angular/router';
-import { FormBuilder, FormGroup, Validators } from '@angular/forms';
-import { ReactiveFormsModule } from '@angular/forms';
+import { FooterComponent } from "../../components/footer/footer.component";
 
 @Component({
   selector: 'app-login',
-  imports: [
-    ReactiveFormsModule
-  ],
   templateUrl: './login.component.html',
-  styleUrl: './login.component.scss'
+  styleUrl: './login.component.scss',
+  imports: [FooterComponent]
 })
 export class LoginComponent {
-  loginForm!: FormGroup;
 
   constructor(private router: Router) {}
 
-  login(): void {
+  login() {
       this.router.navigate(['/home']);
   }
 }
